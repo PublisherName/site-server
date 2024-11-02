@@ -45,7 +45,6 @@ services:
       - gnome_net
 
 
-
   redis:
     container_name: gnome_syncer_redis
     image: redis:alpine

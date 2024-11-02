@@ -1,5 +1,7 @@
 from django.urls import path
+
 from .views import NewsletterCreateView, UnsubscribeView
+
 
 urlpatterns = [
     # Route for creating a new subscription

@@ -57,11 +57,38 @@ vine = "5.1.0"
 wcwidth = "0.2.13"
 
 [tool.black]
-line-length = 79  # Adjust the line length if necessary
-target-version = ['py311']  # Set your Python version, e.g. py37, py39, etc.
-skip-string-normalization = false  # Use double quotes everywhere
-
+line-length = 79
+target-version = ['py311']
+skip-string-normalization = false
+extend-exclude = '''
+/(
+    \.git
+  | \.venv
+  | __pycache__
+  | migrations
+)/
+'''
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+lines_after_imports = 2
+combine_as_imports = "true"
+skip = [
+    "__pycache__",
+    ".venv",
+    "migrations",
+]
+
+[tool.codespell]
+skip = [
+    "requirements.txt",
+    "__pycache__",
+    ".venv",
+    "migrations",
+    "staticfiles"
+]

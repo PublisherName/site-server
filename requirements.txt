@@ -7,6 +7,7 @@ black==24.10.0
 Brotli==1.1.0
 celery==5.4.0
 certifi==2024.8.30
+cfgv==3.4.0
 click==8.1.7
 click-didyoumean==0.3.1
 click-plugins==1.1.1
@@ -14,6 +15,7 @@ click-repl==0.3.0
 colorama==0.4.6
 cron-descriptor==1.4.5
 dill==0.3.9
+distlib==0.3.9
 Django==5.1.1
 django-celery-beat==2.7.0
 django-celery-results==2.5.1
@@ -26,8 +28,10 @@ django-stubs-ext==5.1.0
 django-timezone-field==7.0
 djangorestframework==3.15.2
 drf-yasg==1.21.7
+filelock==3.16.1
 flake8==7.1.1
 gunicorn==23.0.0
+identify==2.6.1
 importlib_resources==6.4.5
 inflection==0.5.1
 isort==5.13.2
@@ -36,10 +40,12 @@ jsonschema-specifications==2023.12.1
 kombu==5.4.2
 mccabe==0.7.0
 mypy-extensions==1.0.0
+nodeenv==1.9.1
 packaging==24.1
 pathspec==0.12.1
 pillow==11.0.0
 platformdirs==4.3.6
+pre_commit==4.0.1
 prompt_toolkit==3.0.47
 psycopg2==2.9.10
 pycodestyle==2.12.1
@@ -65,5 +71,6 @@ tzdata==2024.1
 uritemplate==4.1.1
 urllib3==2.2.3
 vine==5.1.0
+virtualenv==20.27.1
 wcwidth==0.2.13
 whitenoise==6.7.0

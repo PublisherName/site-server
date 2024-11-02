@@ -1,5 +1,6 @@
 from rest_framework.generics import CreateAPIView, UpdateAPIView
 from rest_framework.response import Response
+
 from .models import NewsletterSubscriber
 from .serializers import NewsletterSubscriberSerializer
 

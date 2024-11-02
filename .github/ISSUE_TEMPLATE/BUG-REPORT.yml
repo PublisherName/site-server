@@ -1,13 +1,11 @@
 name: Bug Report
 description: Create a new ticket for a bug.
-title: "[BUG]: " 
-labels: [
-"bug"
-]
-assignees:  
-- rex9840
-- n1rjal 
-- Sailesh-Singh
+title: "[BUG]: "
+labels: ["bug"]
+assignees:
+  - rex9840
+  - n1rjal
+  - Sailesh-Singh
 
 body:
   - type: textarea

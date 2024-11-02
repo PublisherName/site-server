@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 from rest_framework.permissions import AllowAny
-from . import serializers
-from . import models
+
+from . import models, serializers
 
 
 # Create your views here.

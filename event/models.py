@@ -1,7 +1,8 @@
-from django.db import models
-from django.core.exceptions import ValidationError
-from uuid import uuid4
 from datetime import datetime
+from uuid import uuid4
+
+from django.core.exceptions import ValidationError
+from django.db import models
 from django.utils.text import slugify
 
 

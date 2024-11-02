@@ -1,4 +1,5 @@
 from rest_framework import serializers
+
 from . import models
 
 
@@ -48,7 +49,7 @@ class EventSerializer(serializers.ModelSerializer):
         Args:
             obj(Event): The event object
         Returns:
-            list{dict]: A list of dictonaries, each containing
+            list{dict]: A list of dictionaries, each containing
                 - 'caption' (str): The caption of the image.
                 - 'images' (str): The URL of image.
                 - 'created_at' (datetime): The timestamp of image creation

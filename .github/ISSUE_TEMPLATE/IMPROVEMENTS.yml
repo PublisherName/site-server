@@ -1,13 +1,11 @@
 name: Improvement  Request
-description: Create a new ticket for a improvement request  
+description: Create a new ticket for a improvement request
 title: "[REQUEST]: "
-labels: [
-  "enhancement" ,"question" 
-]
-assignees:  
-- rex9840
-- n1rjal 
-- Sailesh-Singh
+labels: ["enhancement", "question"]
+assignees:
+  - rex9840
+  - n1rjal
+  - Sailesh-Singh
 
 body:
   - type: input

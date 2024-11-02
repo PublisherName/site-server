@@ -1,12 +1,10 @@
 # Register your models here.
-from . import models
-from django.contrib import admin
 from django import forms
-from nested_admin import (
-    NestedStackedInline,
-    NestedModelAdmin,
-)
+from django.contrib import admin
 from django.utils.html import format_html
+from nested_admin import NestedModelAdmin, NestedStackedInline
+
+from . import models
 
 
 class ScheduleAdmin(admin.ModelAdmin):
