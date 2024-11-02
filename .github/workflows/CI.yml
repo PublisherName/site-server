@@ -10,41 +10,48 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Set up Python
-      id: python-setup
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.12'
+      - name: Set up Python
+        id: python-setup
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
 
-    - name: Make required directories
-      run: |
-        mkdir logs staticfiles
-        touch logs/django_error.log
+      - name: Make required directories
+        run: |
+          mkdir logs staticfiles
+          touch logs/django_error.log
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        python -m pip install -r requirements.txt
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
 
+      - name: Install dev dependencies
+        run: |
+          python -m pip install black flake8
 
-    - name: Install dev dependencies
-      run: |
-        python -m pip install black flake8
+      - name: Run flake8 linting
+        run: flake8 .
 
-    - name: Run flake8 linting
-      run: flake8 .
+      - name: Run black for formatting check
+        run: black . --check
 
-    - name: Run black for formatting check
-      run: black . --check
+      - name: Run codespell
+        run: codespell --quiet-level=2
 
+      - name: Run Yamllint
+        run: yamllint .
 
-    - name: Add dummy .env file
-      run: |
-        cp env.example .env
+      - name: Run isort
+        run: isort . --check-only
 
-    - name: Run Django system checks
-      run: |
-        python manage.py check || exit 1
+      - name: Add dummy .env file
+        run: |
+          cp env.example .env
+
+      - name: Run Django system checks
+        run: |
+          python manage.py check || exit 1

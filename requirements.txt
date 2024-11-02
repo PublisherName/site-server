@@ -12,6 +12,7 @@ click==8.1.7
 click-didyoumean==0.3.1
 click-plugins==1.1.1
 click-repl==0.3.0
+codespell==2.3.0
 colorama==0.4.6
 cron-descriptor==1.4.5
 dill==0.3.9
@@ -64,6 +65,7 @@ setuptools==74.1.2
 six==1.16.0
 sqlparse==0.5.1
 swagger-spec-validator==3.0.4
+tomli==2.0.2
 tomlkit==0.13.2
 types-PyYAML==6.0.12.20240917
 typing_extensions==4.12.2
@@ -74,3 +76,4 @@ vine==5.1.0
 virtualenv==20.27.1
 wcwidth==0.2.13
 whitenoise==6.7.0
+yamllint==1.35.1
