@@ -69,20 +69,47 @@ docs/improve-readme
 
 ## Code Formatting
 
-Consistent code formatting improves readability and maintainability. Follow these rules:
+Consistent code formatting enhances readability and maintainability. Follow these guidelines:
 
 - Use [black](https://black.readthedocs.io/en/stable/) for automatic code formatting.
   - Default configuration with `max_line_length=79` and double quotes.
-  - Target Python 3.11 compatibility.
-- Use [flake8](https://flake8.pycqa.org/) for linting to ensure code quality.
-  - Run `flake8` to catch unused variables and other issues.
-  - Check for adherence to [PEP 8](https://peps.python.org/pep-0008/) and best practices.
+  - Target compatibility with Python 3.11.
 
-Before pushing your code, run the following commands:
+- Use [flake8](https://flake8.pycqa.org/) for linting to ensure code quality.
+  - Run `flake8` to catch unused variables and other potential issues.
+  - Check for adherence to [PEP 8](https://peps.python.org/pep-0008/) and coding best practices.
+
+- Use [isort](https://github.com/PyCQA/isort) to sort imports.
+  - Align `isort` settings with `black` for consistent formatting.
+  - Format multi-line imports using the "Vertical Hanging Indent" style.
+  - Add 2 blank lines after import statements.
+  - Combine `as` imports, grouping them together.
+
+- Use [pre-commit-hooks](https://github.com/pre-commit/pre-commit-hooks) for helpful pre-commit checks.
+  - Flags any large files added to the repository.
+  - Detects unresolved merge conflict markers in files.
+  - Detects `print()` and `pdb` statements in Python code to prevent accidental commits of debug code.
+  - Identifies and removes trailing whitespace for cleaner, more consistent formatting.
+
+- Use [yamllint](https://github.com/adrienverge/yamllint) to format YAML files.
+  - Limits lines to a maximum of 140 characters.
+  - Allows at most one space inside braces and brackets.
+  - Disallows spaces after colons and commas.
+  - Disables linting and indentation checks for comments.
+  - Disables requiring the document start marker (`---`) at the beginning of YAML files.
+  - Allows a maximum of two consecutive empty lines.
+  - Enables checks for duplicate keys in mappings (dictionaries) to prevent unintentional overwrites.
+  - Disables checks enforcing explicit `true`/`false` values instead of `yes`/`no`.
+
+- Use [pyupgrade](https://github.com/asottile/pyupgrade) to upgrade Python syntax automatically.
+  - Enables updates for syntax supported from Python 3.7 onward.
+
+- Use [codespell](https://github.com/codespell-project/codespell) to identify and fix common spelling errors.
+
+## Before pushing your code, run the following command:
 
 ```bash
-python3 -m black .  # Formats code
-python3 -m flake8   # Runs lint checks
+pre-commit run --all-files
 ```
 
 By following this style guide, you contribute to a consistent and maintainable codebase, making it easier for everyone to collaborate and improve the project. Thank you for your contributions!

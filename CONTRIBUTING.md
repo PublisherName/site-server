@@ -38,9 +38,9 @@ You can contribute in several ways:
    cd site-server
    ```
 
-3. **Setup env**
+3. **Setup Virtual Environment**
 
-   Set up environment variables env by copying the env.example file and updating its entries to match your local settings.
+   Set up environment variables .env by copying the env.example file and updating its entries to match your local settings.
    ```bash
    cp env.example .env
    ```
@@ -51,7 +51,17 @@ You can contribute in several ways:
    source ./.venv/bin/activate
    ```
 
-5. **Create a branch for your changes:**
+5. **Install requirements**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+6. **Install Pre-commit Hooks**
+   ```bash
+   pre-commit install
+   ```
+
+7. **Create a branch for your changes:**
    ```bash
    git checkout -b your-branch-name
    ```
@@ -70,9 +80,8 @@ You can sync the fork using Github's UI
 
 4. **Lint your changes:**
     Inside the virtual environment, use the following commands
-    ```
-    python -m black . # Formats your code to meet our coding standards
-    python -m flake8  # Identifies unused variables and linting issues
+    ```bash
+    pre-commit run --all-files
     ```
 
     Please note that our workflow will ignore your changes if it doesn't run or if linting is failing. If you need any help with that, feel free to create a PR and ask the help from maintainer.
