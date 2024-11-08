@@ -50,3 +50,13 @@ repos:
       - id: codespell
         additional_dependencies:
           - tomli
+
+  - repo: local
+    hooks:
+      - id: django-check
+        name: Django Configuration Check
+        entry: python manage.py check
+        always_run: true
+        pass_filenames: false
+        language: system
+        types: [python]
